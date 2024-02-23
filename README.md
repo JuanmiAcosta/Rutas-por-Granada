@@ -6,20 +6,16 @@ y Javascript, y terminando por PHP y AJAX. El diseño e implementación es origi
 En la primera parte de esta práctica se nos pidió representar de manera estática un diseño similar a este:
 
 <p align="center">
-  <img src="https://github.com/JuanmiAcosta/Gestion_Empleados_Spring_Angular/blob/master/arquitectura_app.png?raw=true" alt="Imagen representativa">
+  <img src="https://github.com/JuanmiAcosta/Rutas-por-Granada/blob/master/PR1/esquema.png?raw=true" alt="Imagen representativa">
 </p>
 
 Y decidí hacerlo entonces con esta estética, minimalista, pixelart y sin demasiada información:
 
 <p align="center">
-  <img src="https://github.com/JuanmiAcosta/Gestion_Empleados_Spring_Angular/blob/master/endpoints.png?raw=true" alt="Imagen representativa">
+  <img src="https://github.com/JuanmiAcosta/Rutas-por-Granada/blob/master/PR1/dise%C3%B1o.png?raw=true" alt="Imagen representativa">
 </p>
 
-Para este mini proyecto además he utilizado ciertas librerías de Javascript como lo son "Swal" para mejorar la estética:
-
-<p align="center">
-  <img src="https://github.com/JuanmiAcosta/Gestion_Empleados_Spring_Angular/blob/master/ejemplo_actualizar.png?raw=true" alt="Imagen representativa">
-</p>
+En las siguientes prácticas se implementarán Javascript para dar dinamismo, y PHP para manejar datoas externos a la página.
 
 ## Tecnologías utilizadas 🛠️ / Lenguajes de programación 👀
 
