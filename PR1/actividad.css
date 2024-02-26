@@ -23,18 +23,18 @@
 }
 
 .encabezado_actividad ul {
-    list-style-image: url(icon/roca.png);  
-    text-align: start; 
+    list-style-image: url(icon/roca.png);
+    text-align: start;
     justify-content: center;
 }
 
-.encabezado_actividad ul li{
+.encabezado_actividad ul li {
     font-size: 35px;
     padding-left: 20px;
 }
 
-.encabezado_actividad ul li a{
-    color : #648541;
+.encabezado_actividad ul li a {
+    color: #648541;
     text-decoration: none;
 }
 
@@ -67,17 +67,20 @@
 }
 
 .p1 {
-    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
     grid-column: 1 / 3;
     grid-row: 2 / 3;
     text-align: justify;
-    padding:15px;
+    padding: 15px;
 }
 
-.botones{
+.botones {
     display: flex;
     flex-direction: row;
-    justify-content:end;
+    justify-content: end;
     align-items: center;
     grid-column: 2 / 4;
     grid-row: 3;
@@ -86,44 +89,44 @@
     margin-bottom: 30px;
 }
 
-.botones a{
-    margin-left : 46px;
-    margin-right : 46px;
+.botones a {
+    margin-left: 46px;
+    margin-right: 46px;
     transition: transform 0.5s ease-out;
     text-decoration: none;
     color: #38531C;
 }
 
-.botones a:hover{
-    transform:scale(1.3);
-    cursor:pointer;
+.botones a:hover {
+    transform: scale(1.3);
+    cursor: pointer;
 }
 
-.bonus{
-    grid-column:1/3;
+.bonus {
+    grid-column: 1/3;
     grid-row: 3;
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: start;
     align-items: center;
 }
 
-.bonus h2{
+.bonus h2 {
     font-size: 35px;
     margin-right: 20px;
     margin: 0 20px 0 10px;
 }
 
-.bonus span img{
+.bonus span img {
     width: 90%;
     height: 100px;
 }
 
-.bonus span figure{
+.bonus span figure {
     text-align: center;
     transition: transform 0.5s ease-out;
 }
 
-.bonus span figure:hover{
-    transform:scale(1.5);
+.bonus span figure:hover {
+    transform: scale(1.5);
 }
