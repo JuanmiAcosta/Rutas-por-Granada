@@ -1,4 +1,4 @@
-/*media query for responsive design*/
+/*Esta página css va dirigida únicamente al diseño responsive de la página en general*/
 
 /*Portada-Layout*/
 
@@ -181,6 +181,6 @@
     
     .bonus span img {
         width: 100%;
-        height: 60px;
+        height: 50px;
     }
 }
