@@ -1,3 +1,38 @@
+.aside_actividad {
+    background-color: #879435;
+    padding: 20px;
+    width: 20%;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.aside_actividad h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.aside_actividad ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.aside_actividad ul li {
+    padding: 10px 0;
+    border-top: 3px solid #ffffff;
+}
+
+.aside_actividad ul li a {
+    color: black;
+    font-size: 30px;
+}
+
+.aside_actividad ul li a:hover {
+    color: #584E12;
+}
+
 .wrapper-actividad {
     display: grid;
     grid-gap: 10px;
