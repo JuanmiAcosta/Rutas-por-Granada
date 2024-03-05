@@ -24,3 +24,5 @@ En las siguientes prácticas se implementarán Javascript para dar dinamismo, y 
 * Javascript
 * PHP
 * AJAX
+
+Link de la página estática : https://elegant-buttercream-61f8de.netlify.app/
