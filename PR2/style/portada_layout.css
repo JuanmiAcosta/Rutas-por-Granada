@@ -150,6 +150,7 @@ header {
     display: flex;
     height: 100%;
     width:100%;
+    justify-items: center;
 }
 
 aside {
@@ -192,8 +193,8 @@ aside ul li a:hover {
     grid-gap: 10px;
     grid-template-columns: repeat(3, 1fr);
     background-color: #f0f0d8;
-    padding: 20px;
-    width: 80%;
+    padding: 1%;
+    width: 100%;
     border: 5px solid black;
     border-radius: 20px;
     margin: 10px;

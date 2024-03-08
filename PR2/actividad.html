@@ -3,19 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Actividad</title>
-    
-    <link rel="stylesheet" href="/style/portada_layout.css">
-    <link rel="stylesheet" href="/style/actividad.css">
-    <link rel="stylesheet" href="/style/responsive.css">
-    <link rel="stylesheet" href="/style/comentarios.css">
-
-    <script src="https://kit.fontawesome.com/b9c8f9a610.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="icon/placeholder.jpg" type="image/x-icon">
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
@@ -23,9 +14,19 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
+
+    <link rel="stylesheet" href="/style/portada_layout.css">
+    <link rel="stylesheet" href="/style/actividad.css">
+    <link rel="stylesheet" href="/style/responsive.css">
+    <link rel="stylesheet" href="/style/comentarios.css">
+
+    <script src="https://kit.fontawesome.com/b9c8f9a610.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="icon/placeholder.jpg" type="image/x-icon">
+
 </head>
 
-<body style="font-family: 'Micro 5', sans-serif; font-weight: 400; font-style: normal; color:black;">
+<body>
     <header>
         <a href="portada.html" class="logo"><img src="icon/placeholder.jpg" alt="logo"></a>
         <div class="titulo-nav">
@@ -42,18 +43,18 @@
         </div>
     </header>
 
-    <div class="container-jm">
+    <div class="container">
 
         <aside class="aside_actividad">
             <!-- Zona lateral con enlaces de interés -->
-            <h2 style="font-weight: bold;">Enlaces de Interés</h2>
+            <h2>Enlaces de Interés</h2>
             <ul>
                 <li><a href="#">Equipo necesario</a></li>
                 <li><a href="#">Consejos de seguridad</a></li>
                 <li><a href="#">Rutas recomendadas</a></li>
             </ul>
 
-            <h2 style="font-weight: bold;">Última hora</h2>
+            <h2>Última hora</h2>
 
             <div class="liston-ultima-hora">
                 <span><i class="fa-solid fa-triangle-exclamation fa-fade"></i></span>
@@ -78,7 +79,7 @@
         <main class="wrapper-actividad">
 
             <section class="encabezado_actividad">
-                <h2 style="font-weight: bold;">Ruta de los Bolos - Dúrcal</h2>
+                <h2>Ruta de los Bolos - Dúrcal</h2>
                 <ul>
 
                     <li><a href="https://www.google.com/maps/place/Ruta+de+Los+Bolos/@37.0021274,-3.5669257,17z/data=!3m1!4b1!4m6!3m5!1s0xd71ef0ed545643d:0xd5201a5d5239e61!8m2!3d37.0021274!4d-3.5669257!16s%2Fg%2F11s561zn3n?entry=ttu"
@@ -173,21 +174,21 @@
                                 Ideal
                                 para disfrutar de un día en la naturaleza.</p>
 
-                            <p class="fechaYhora">01/03/2024 a las 08:34</p>
+                            <p class="fechaYhora">1/3/2024, 08:14:30</p>
 
                         </div>
 
                         <div class="comentario">
                             <div class="autor">
                                 <div class="img-avatar" style="background-color: rgb(123, 187, 107);">
-                                    <img src="icon/avatar.jpg" alt="avatar">
+                                    <img src="icon/avatar1.jpg" alt="avatar">
                                 </div>
                                 <p>María López (marialopezxd@gmail.com)</p>
                             </div>
 
                             <p>El río ? Una mierda.</p>
 
-                            <p class="fechaYhora">05/03/2024 a las 23:02</p>
+                            <p class="fechaYhora">5/3/2024, 12:34:37</p>
 
                         </div>
 
@@ -195,29 +196,27 @@
 
                     <!-- Formulario para escribir un comentario -->
 
-                    <div class="form-comentarios">
+                    <div class="form-comentarios">          
 
-                        <form>
+                        <form class="form-contenido">
                             <h3>Deja tu comentario:</h3>
-
-                            <div class="mb-3">
-                              <label for="email" class="form-label">Correo electrónico</label>
-                              <input type="email" class="form-control fs-3" id="email" placeholder="nombre@ejemplo.com" required>
-                              <div id="emailHelp" class="form-text fs-5">Tu email será visible para los usuarios.</div>
+                            <div class="form-group">
+                                <label for="name">Nombre:</label>
+                                <input type="text" id="name" name="name" placeholder="Juan de Dios" required>
                             </div>
-
-                            <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre completo</label>
-                                <input type="nombre" class="form-control fs-3" id="nombre" placeholder="Juan de Dios"required>
+                        
+                            <div class="form-group">
+                                <label for="email">Correo electrónico:</label>
+                                <input id="email" name="email"  placeholder="juanillo@gmail.es"required>
                             </div>
-
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Escriba su comentario...</label>
-                                <textarea class="form-control fs-3" id="exampleFormControlTextarea1" rows="3" placeholder="Fue una ruta genial..."></textarea>
-                              </div>
-
-                            <button type="submit" class="btn btn-success fs-3">Enviar</button>
-                          </form>
+                        
+                            <div class="form-group">
+                                <label for="comments">Comentarios:</label>
+                                <textarea id="comments" name="comments" rows="3" placeholder="Increíble la ruta ..."required></textarea>
+                            </div>
+                        
+                            <button type="submit">Enviar</button>
+                        </form>
 
                     </div>
 
@@ -237,7 +236,8 @@
     </footer>
 
     <script type="module" src="js/visibilizar_comentarios.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="js/comentarios.js"></script>
+    <script type="module" src="js/comprueba_texto.js"></script>
 </body>
 
 </html>

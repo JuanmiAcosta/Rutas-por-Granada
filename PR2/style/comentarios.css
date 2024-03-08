@@ -85,7 +85,7 @@
 }
 
 .comentario p{
-    margin-top:10px;
+    margin-top:20px;
 }
 
 .autor {
@@ -112,9 +112,14 @@
     aspect-ratio: 1/1;
 }
 
+.autor p{
+    text-align: start;
+}
+
 /*--------------------------------*/
 
 .form-comentarios{
+    width:auto;;
     text-align: justify;
     border: 2px solid black;
     border-radius: 20px;
@@ -123,25 +128,97 @@
     padding: 25px;
 }
 
-.form-comentarios h3{
-    font-size:45px;
-}
-
 .form-comentarios form{
-    font-size:35px;
-    padding:30px;
-    display:flex;
+    width:100%;
+    display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: center;
 }
 
-form div{
-    width:80%;
+.form-comentarios h3{
+    font-size:35px;
 }
 
-form button{
-    width:20%;
-    height: auto;
-
+.form-group{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
 }
+
+.form-group label{
+    font-size:35px;
+}
+
+.form-comentarios input, .form-comentarios textarea{
+    font-family: "Micro 5", sans-serif;
+    font-size: 30px;
+    width:95%;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.form-comentarios button{
+    font-family: "Micro 5", sans-serif;
+    font-size: 30px;
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #879435;
+    color: white;
+    align-self: center;
+    transition: background-color 0.5s ease-out;
+}
+
+.form-comentarios button:hover{
+    cursor: pointer;
+    background-color: #584E12;
+}
+
+@media(width < 700px){
+    .contenido-comentarios p{
+        font-size:25px;
+    }
+
+    .form-comentarios input,
+    .form-comentarios textarea{
+        width:85%;
+    }
+}
+
+@media(width < 550px){
+
+    .autor{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .titulo-comentarios .btn-comentarios{
+        width:50px;
+        height: 50px;
+    }
+
+    .comentarios .titulo-comentarios h2{
+        font-size: 30px;
+    }
+
+    .comentarios h3{
+        font-size: 30px;
+    
+    }
+}
+
+@media(width < 330px){
+    .contenido-comentarios p,
+    .contenido-comentarios label,
+    .form-comentarios input,
+    .form-comentarios textarea{
+        font-size:15px;
+    }
+}
+
