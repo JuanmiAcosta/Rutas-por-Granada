@@ -22,6 +22,11 @@
 
     <script src="https://kit.fontawesome.com/b9c8f9a610.js" crossorigin="anonymous"></script>
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
     <link rel="icon" href="icon/placeholder.jpg" type="image/x-icon">
 
 </head>
@@ -186,7 +191,7 @@
                                 <p>María López (marialopezxd@gmail.com)</p>
                             </div>
 
-                            <p>El río ? Una mierda.</p>
+                            <p>El río ? Una ******.</p>
 
                             <p class="fechaYhora">5/3/2024, 12:34:37</p>
 
@@ -196,7 +201,7 @@
 
                     <!-- Formulario para escribir un comentario -->
 
-                    <div class="form-comentarios">          
+                    <div class="form-comentarios">
 
                         <form class="form-contenido">
                             <h3>Deja tu comentario:</h3>
@@ -204,17 +209,18 @@
                                 <label for="name">Nombre:</label>
                                 <input type="text" id="name" name="name" placeholder="Juan de Dios" required>
                             </div>
-                        
+
                             <div class="form-group">
                                 <label for="email">Correo electrónico:</label>
-                                <input id="email" name="email"  placeholder="juanillo@gmail.es"required>
+                                <input id="email" name="email" placeholder="juanillo@gmail.es" required>
                             </div>
-                        
+
                             <div class="form-group">
                                 <label for="comments">Comentarios:</label>
-                                <textarea id="comments" name="comments" rows="3" placeholder="Increíble la ruta ..."required></textarea>
+                                <textarea id="comments" name="comments" rows="3" placeholder="Increíble la ruta ..."
+                                    required></textarea>
                             </div>
-                        
+
                             <button type="submit">Enviar</button>
                         </form>
 
@@ -238,6 +244,7 @@
     <script type="module" src="js/visibilizar_comentarios.js"></script>
     <script type="module" src="js/comentarios.js"></script>
     <script type="module" src="js/comprueba_texto.js"></script>
+
 </body>
 
 </html>

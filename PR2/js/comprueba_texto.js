@@ -1,4 +1,5 @@
 import { TEXTO } from './constantes.js';
+import Swal from 'https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/+esm'
 
 const palabrasFeillas = ['puta', 'mierda', 'coño', 'polla', 'gilipollas', 'cabrón', 'cabron', 'idiota', 'imbecil', 'imbécil'];
 
@@ -13,7 +14,11 @@ TEXTO.addEventListener('input', function() {
     for (var i = 0; i < palabras.length; i++) {
         // If the word is prohibited, alert the user
         if (palabrasFeillas.includes(palabras[i].toLowerCase())) {
-            alert('Se ha detectado una palabra no permitida en el comentario. Será censurada inmediatamante.');
+            Swal.fire({
+                title: '<h3 style="color:black">Se ha detectado una palabra no permitida en el comentario. Será censurada inmediatamante.</h3>',
+                icon: 'warning',
+                confirmButtonColor: "#879435",
+              })
 
             var long = palabras[i].length;
 

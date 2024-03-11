@@ -1,4 +1,5 @@
 import { FORM, COMENTARIOS } from './constantes.js';
+import Swal from 'https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/+esm'
 
 function validarEmail() {
     var email = document.getElementById('email').value;
@@ -12,7 +13,11 @@ FORM.addEventListener('submit', function(event) {
     event.preventDefault();
 
     if (!validarEmail()) {
-        alert('Por favor, introduce un email válido. Formato (<loquesea>@<loquesea>.<loquesea>)');
+        Swal.fire({
+            title: '<h3 style="color:black">Ingrese un email con formato xxx@xxx.xxx</h3>',
+            icon: 'warning',
+            confirmButtonColor: "#879435",
+          })
         return;
     }
 
@@ -63,6 +68,12 @@ FORM.addEventListener('submit', function(event) {
     fechaTexto.textContent = fecha.toLocaleString();
 
     divComentario.appendChild(fechaTexto);
+
+    Swal.fire({
+        title: '<h3 style="color:black;">Su comentario será público para el resto de usuarios</h3>',
+        icon: 'success',
+        confirmButtonColor: "#879435",
+      })
 
     //Añadimos el comentario al contenedor de comentarios
 
