@@ -16,8 +16,13 @@ TEXTO.addEventListener('input', function() {
         if (palabrasFeillas.includes(palabras[i].toLowerCase())) {
             Swal.fire({
                 title: '<h3 style="color:black">Se ha detectado una palabra no permitida en el comentario. Será censurada inmediatamante.</h3>',
-                icon: 'warning',
+                icon: 'error',
                 confirmButtonColor: "#879435",
+                confirmButtonText: "De acuerdo, lo entiendo.",
+                imageUrl: "icon/censurar.jpg",
+                imageWidth: 200,
+                imageHeight: 200,
+                imageAlt: "Custom image"
               })
 
             var long = palabras[i].length;

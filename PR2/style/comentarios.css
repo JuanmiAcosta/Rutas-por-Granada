@@ -211,6 +211,10 @@
         font-size: 30px;
     
     }
+
+    .form-comentarios input, .form-comentarios textarea{
+        margin-left:0px;
+    }
 }
 
 @media(width < 330px){
