@@ -1,0 +1,199 @@
+/* Esta página css va dirigida a la página de imprimir la actividad */
+
+body{
+    padding:50px;
+    display:grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Header */
+
+header{
+    grid-column: 1 / 4;
+    grid-row: 1;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;;
+}
+
+
+.logo {
+    float: left;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 0;
+    margin-top: 10px;
+    width: 130px;
+    height: 130px;
+
+    order:2;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100px;
+    border: 5px solid #706149;
+    transition: transform 0.5s ease-out;
+}
+.titulo-nav{
+    display:flex;
+    flex-direction: row;
+
+    order:1;
+}
+
+.titulo-nav nav{
+    display:none;
+    /*width:fit-content;
+    text-decoration: none;
+    color:black;
+    font-size: 25px;
+    list-style: none;*/
+}
+
+.titulo-nav nav ul{
+    display:flex;
+    flex-direction: row;
+    justify-content: center; 
+    list-style: none;
+}
+
+.titulo-nav nav ul li{
+    margin: 0 20px 0 20px;
+}
+
+.titulo-nav nav ul li a {
+    text-decoration: none;
+    color:black;
+}
+
+/* Container */
+
+.container{
+    grid-column: 1 / 4;
+    grid-row: 2;
+}
+
+.container aside{
+    display:none;
+}
+
+.wrapper-actividad{
+    display:grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.encabezado_actividad{
+    grid-column: 1;
+    text-align: center;
+    grid-row: 1;
+    justify-content: left;
+}
+
+.encabezado_actividad ul{
+    list-style: none;
+    padding: 0;
+
+}   
+
+.img1{
+    grid-column: 2;
+    grid-row: 1;
+    
+}
+
+.img1 img{
+    width:100%;
+    height:max-content; 
+}
+
+.img2{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.img2 img{
+    width:100%;
+    height:auto; 
+}
+
+.p1{
+    grid-column: 2;
+    grid-row: 2;
+    text-align: justify;
+    padding:15px;
+}
+
+.botones{
+    display: none;
+}
+
+.bonus{
+    grid-column: 1 / 3;
+    grid-row: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.bonus span figure img{
+    width: 100px;
+    height:auto;
+}
+
+.bonus span figure{
+    text-align: center;
+}
+
+/* Footer */
+
+footer{
+    grid-column: 1 / 4;
+    grid-row: 4;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+@media (width < 625px){
+
+    .encabezado_actividad{
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .img1{
+        grid-column: 1 / 3;
+        grid-row: 2;
+    }
+
+    .img2{
+        grid-column: 1 / 3;
+        grid-row: 4;
+    }
+
+    .p1{
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
+
+    header{
+        flex-direction: column;
+    }
+
+    .bonus{
+        grid-column: 1 / 3;
+        grid-row: 5;
+        flex-direction: column;
+    }
+}

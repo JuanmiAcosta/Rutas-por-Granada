@@ -1,0 +1,86 @@
+{% extends "plantilla.html" %}
+
+{% block head %}
+
+    <title>Imprimir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/actividad_imprimir.css">
+    <script src="https://kit.fontawesome.com/b9c8f9a610.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../icon/placeholder.jpg" type="image/x-icon">
+
+{% endblock %}
+
+
+{% block aside %}
+
+<aside>
+    <!-- Zona lateral con enlaces de interés -->
+    <h2>Enlaces de Interés</h2>
+    <ul>
+        <li><a href="#">Equipo necesario</a></li>
+        <li><a href="#">Consejos de seguridad</a></li>
+        <li><a href="#">Rutas recomendadas</a></li>
+    </ul>
+</aside>
+
+{% endblock %}
+
+{% block shared %}
+
+<main class="wrapper-actividad">
+
+    <section class="encabezado_actividad">
+        <h2>{{ actividad['titulo'] }}</h2>
+        <ul>
+
+            <li><a href="{{ actividad['url_ubicacion'] }}" target="_blank">Ubicación : {{ actividad['ubicacion'] }}</a></li>
+            </li>
+            <li>
+                <p> Dificultad : {{actividad['dificultad']}} </p>
+            <li>
+                <p> Época recomendada : {{actividad['epoca']}} </p>
+            </li>
+            <li>
+                <p> Desnivel acumulado : {{actividad['desnivel']}} m </p>
+            </li>
+            <li>
+                <p> Distancia total : {{actividad['distancia']}} km </p>
+            </li>
+            <li>
+                <p> Duración : {{actividad['duracion']}} h</p>
+            </li>
+
+        </ul>
+    </section>
+    <figure class="img1"><img src="{{actividad['foto_1']}}" alt="Actividad"></figure>
+
+    <figure class="img2"><img src="{{actividad['foto_2']}}" alt="Actividad"></figure>
+
+    <p class="p1">
+        {{ actividad['descripcion'] }}
+    </p>
+
+    <section class="botones">
+        <a href="{{redes['facebook']}}" target="_blank" class="fb"><span><i
+                    class="fa-brands fa-facebook"></i></span></a>
+        <a href="{{redes['twitter']}}" target="_blank" class="tw"><span><i
+                    class="fa-brands fa-x-twitter"></i></span></a>
+        <a href="actividad_imprimir/{{act}}" class="imprimir"><span><i class="fa-solid fa-print"></i></span></a>
+    </section>
+
+    <section class="bonus">
+        <h2> Ten en cuenta ... </h2>
+        {% for bon in bonus %}
+            <span>
+                <figure><img src="{{ bon['img_bonus'] }}" alt="{{ bon['desc_bonus'] }}">
+                    <figcaption>{{ bon['desc_bonus'] }}</figcaption>
+                </figure>
+            </span>
+        {% endfor %}
+    </section>
+
+</main>
+
+{% endblock %}

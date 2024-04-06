@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+#Redirige la URL limpia a la URL con parámetros de consulta
+RewriteRule ^actividad/(\d+)$ actividad.php?ac=$1 [L]
+#http://localhost/index.php que se convierta en http://localhost/home
+RewriteRule ^home$ index.php [L]
+#http://localhost/actividad_imprimir.php?act=1 que se convierta en http://localhost/actividad_imprimir/1
+RewriteRule ^actividad_imprimir/(\d+)$ actividad_imprimir.php?act=$1 [L]
+</IfModule>

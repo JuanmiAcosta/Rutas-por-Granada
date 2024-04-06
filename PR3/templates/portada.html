@@ -1,0 +1,61 @@
+{% extends "plantilla.html" %}
+
+{% block head %}
+
+    <title> Granarutas </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="..//style/portada_layout.css">
+    <link rel="stylesheet" href="..//style/responsive.css">
+    <script src="https://kit.fontawesome.com/b9c8f9a610.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../icon/placeholder.jpg" type="image/x-icon">
+
+{% endblock %}
+
+{% block shared %}
+
+<main class="wrapper">
+
+    {% for actividad in actividades %}
+
+        <a class="activity" href="actividad/{{ actividad['id'] }}">
+            <img src="../icon/{{ actividad['foto'] }}" alt="Actividad">
+            <h2 class="nombre_actividad"> {{ actividad['titulo'] }} </h2>
+        </a>
+
+    {% endfor %}
+
+    <a class="activity">
+        <img src="../icon/placeholder.jpg" alt="Actividad">
+        <h2 class="nombre_actividad"> Sin info </h2>
+    </a>
+
+    <a class="activity">
+        <img src="../icon/placeholder.jpg" alt="Actividad">
+        <h2 class="nombre_actividad"> Sin info </h2>
+    </a>
+
+    <a class="activity">
+        <img src="../icon/placeholder.jpg" alt="Actividad">
+        <h2 class="nombre_actividad"> Sin info </h2>
+    </a>
+
+    <a class="activity">
+        <img src="../icon/placeholder.jpg" alt="Actividad">
+        <h2 class="nombre_actividad"> Sin info </h2>
+    </a>
+
+    <a class="activity">
+        <img src="../icon/placeholder.jpg" alt="Actividad">
+        <h2 class="nombre_actividad"> Sin info </h2>
+    </a>
+
+    <a class="activity">
+        <img src="../icon/placeholder.jpg" alt="Actividad">
+        <h2 class="nombre_actividad"> Sin info </h2>
+    </a>
+
+</main>
+
+{% endblock %}

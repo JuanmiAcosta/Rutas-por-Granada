@@ -15,7 +15,9 @@ Y decidí hacerlo entonces con esta estética, minimalista, pixelart y sin demas
   <img src="https://github.com/JuanmiAcosta/Rutas-por-Granada/blob/master/PR1/dise%C3%B1o.png?raw=true" alt="Imagen representativa">
 </p>
 
-En las siguientes prácticas se implementarán Javascript para dar dinamismo, y PHP para manejar datoas externos a la página.
+En las siguientes prácticas se implementarán Javascript para dar dinamismo, y PHP para manejar datos externos a la página.
+
+Además he aprendido más sobre el uso de plantillas, en este caso trabajé con TWIG, y además sobre la separación en este tipo de proyectos de la arquitectura MVC.
 
 ## Tecnologías utilizadas 🛠️ / Lenguajes de programación 👀
 
