@@ -127,4 +127,38 @@ CREATE TABLE NOTICIAS (
     img VARCHAR(100) NOT NULL
 );
 
-INSERT INTO `NOTICIAS`(`titulo`, `descripcion`, `img`) VALUES ('Desprendimiento','Se desprenden rocas en un piuente antes del desvío a Tózar.','../icon/desprendimiento.jpeg'); 
+INSERT INTO `NOTICIAS`(`titulo`, `descripcion`, `img`) VALUES ('Desprendimiento','Se desprenden rocas en un piuente antes del desvío a Tózar.','../icon/desprendimiento.jpeg');
+
+CREATE TABLE PALABRAS_PROHIBIDAS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    palabra VARCHAR(100) NOT NULL
+);
+
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('mierda');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('caca');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('pene');
+INSERT INTO `PALABRAS_PROHHIBIDAS`(`palabra`) VALUES ('polla');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('coño');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('puta');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('zorra');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('cabron');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('gilipollas');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('idiota');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('tonto');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('subnormal');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('retrasado');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('mongolo');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('maricon');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('marica');
+INSERT INTO `PALABRAS_PROHIBIDAS`(`palabra`) VALUES ('homosexual');
+
+CREATE TABLE CLAVE_MAPAS (
+    id INT PRIMARY KEY ,
+    clave VARCHAR(400) NOT NULL,
+    FOREIGN KEY (id) REFERENCES ACTIVIDADES(id)
+);
+
+INSERT INTO `CLAVE_MAPAS`(`id`, `clave`) VALUES ('1','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3186.321432690251!2d-3.5669256999999996!3d37.00212739999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71ef0ed545643d%3A0xd5201a5d5239e61!2sRuta%20de%20Los%20Bolos!5e0!3m2!1ses!2ses!4v1712697289210!5m2!1ses!2ses');
+INSERT INTO `CLAVE_MAPAS`(`id`, `clave`) VALUES ('2','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3180.9857056679084!2d-3.5234034000000003!3d37.129255099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71e45bc890eddf%3A0x77158a222c5f862b!2sRuta%20de%20Los%20Cahorros!5e0!3m2!1ses!2ses!4v1712699182059!5m2!1ses!2ses');
+INSERT INTO `CLAVE_MAPAS`(`id`, `clave`) VALUES ('3','https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12689.77368467618!2d-3.7943711290000404!3d37.332009615420795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6dfdb5ca919131%3A0x4b7aa761d89841dc!2sRuta%20del%20Gollizno!5e0!3m2!1ses!2ses!4v1712699263768!5m2!1ses!2ses');
+

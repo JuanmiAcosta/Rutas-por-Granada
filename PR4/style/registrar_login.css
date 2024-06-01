@@ -1,0 +1,239 @@
+.registro {
+    display: none;
+}
+
+body {
+    font-family: "Micro 5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #fffaeb;
+    margin: 10px;
+    padding: 5px;
+}
+
+header {
+    background-image: linear-gradient(110deg,
+            hsl(68deg 54% 52%) 0%,
+            hsl(70deg 51% 47%) 10%,
+            hsl(72deg 51% 43%) 21%,
+            hsl(74deg 52% 38%) 32%,
+            hsl(76deg 53% 34%) 42%,
+            hsl(78deg 55% 30%) 53%,
+            hsl(80deg 53% 28%) 63%,
+            hsl(83deg 52% 27%) 73%,
+            hsl(85deg 50% 25%) 83%,
+            hsl(88deg 48% 24%) 92%,
+            hsl(91deg 47% 22%) 100%);
+    padding: 15px;
+    text-align: center;
+    height: auto;
+    display: flex;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin: 10px;
+    align-items: center;
+}
+
+.separador {
+    margin-right: 15px;
+}
+
+.logo {
+    float: left;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 8px 0 0 0;
+    width: 150px;
+    height: 150px;
+}
+
+.logo img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 100px;
+    border: 5px solid #706149;
+    transition: transform 0.5s ease-out;
+}
+
+.logo img:hover {
+    border: 5px solid #ccba9c;
+    transform: scale(1.1);
+}
+
+.titulo-nav h1 {
+    font-size: 85px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: start;
+    font-weight: bold;
+}
+
+.titulo-nav nav {
+    width: fit-content;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-size: 40px;
+}
+
+.titulo-nav nav ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.titulo-nav nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin-right: 10px;
+}
+
+.titulo-nav nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.titulo-nav nav ul li a:hover {
+    color: #584E12;
+}
+
+/* register form */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(0deg,
+            hsl(68deg 55% 31%) 0%,
+            hsl(64deg 49% 33%) 5%,
+            hsl(60deg 44% 35%) 12%,
+            hsl(56deg 42% 38%) 20%,
+            hsl(52deg 39% 40%) 33%,
+            hsl(49deg 36% 43%) 57%,
+            hsl(46deg 34% 46%) 73%,
+            hsl(43deg 32% 49%) 84%,
+            hsl(41deg 31% 51%) 93%,
+            hsl(38deg 31% 54%) 100%);
+    padding: 1%;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin: 15px;
+}
+
+main p {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px;
+
+}
+
+section{
+    width:80%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+    margin: 10px;
+}
+
+.registro {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+form {
+    display: flex;
+    width:60%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+input {
+    font-family: "Micro 5", sans-serif;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 30px;
+    width: 100%;
+}
+
+option, select{
+    font-family: "Micro 5", sans-serif;
+    font-size:30px;
+}
+
+label {
+    font-size: 35px;
+    margin: 10px;
+}
+
+button {
+    font-family: "Micro 5", sans-serif;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;  
+    background-color: #7F653A;
+    color: white;
+    width: 25%;
+}
+
+select {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 30px;
+    width: 100%;
+}
+
+.btnsub {
+    background-color: #7F653A;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    transition: 0.5s;
+}
+
+.btnsub:hover {
+    background-color: #584E12;
+    scale: 1.1;
+}
+
+/* footer */
+
+footer {
+    clear: both;
+    background-color: #7F653A;
+    font-size: 40px;
+    padding: 10px 0;
+    text-align: center;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+#error {
+    color: rgb(124, 26, 26);
+    font-size: 30px;
+    border: 2px solid rgb(124, 26, 26);
+    padding: 10px;
+    text-align: center;
+}

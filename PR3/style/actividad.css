@@ -171,3 +171,13 @@
 .bonus span figure:hover {
     transform: scale(1.5);
 }
+
+#iframe{
+    margin-right: 25px;
+    width:fit-content;
+    border: 5px solid black;
+}
+
+iframe {
+    max-width: 100%;
+   }

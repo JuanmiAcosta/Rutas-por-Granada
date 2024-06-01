@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Registrar / Iniciar sesión </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/registrar_login.css">
+    <script src="https://kit.fontawesome.com/b9c8f9a610.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/icon/placeholder.jpg" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <a href="/home" class="logo"><img src="/icon/placeholder.jpg" alt="logo"></a>
+        <div class="titulo-nav">
+            <h1>Granarutas</h1>
+            <nav>
+                <ul>
+                    <li><a href="/home">Inicio</a></li>
+                    <span class="separador">|</span>
+                    <li><a href="#">Actividades</a></li>
+                    <span class="separador">|</span>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="decorador">
+
+        </div>
+    </header>
+
+    <main class="principal">
+
+        <section class="registro">
+            <h2>Registrarse</h2>
+            <form action="registrar.php" method="POST">
+                <label for="nick">Nick</label>
+                <input type="text" name="nick" id="nick" placeholder="jhesulin ..." required>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Jesús Almeida ..." required>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="wanillo@gmail.es..." required>
+                <label for="contrasenia">Contraseña</label>
+                <input type="password" name="contrasenia" id="contrasenia" placeholder="*******?" required>
+                <label for="contrasenia2">Repetir contraseña</label>
+                <input type="password" name="contrasenia2" id="contrasenia2" placeholder="*******?" required>
+                <!--Escoge tu avatar -->
+                <label for="avatar">Escoge tu avatar</label>
+                <select name="avatar" id="avatar">
+                    <option value="/icon/avatar1.jpg" style="background-image:url(/icon/avatar1.jpg);">Avatar 1</option>
+                    <option value="/icon/avatar2.jpg" style="background-image:url(/icon/avatar2.jpg);">Avatar 2</option>
+                    <option value="/icon/avatar3.jpg" style="background-image:url(/icon/avatar3.jpg);">Avatar 3</option>
+                    <option value="/icon/avatar4.jpg" style="background-image:url(/icon/avatar4.jpg);">Avatar 4</option>
+                    <option value="/icon/avatar5.jpg" style="background-image:url(/icon/avatar5.jpg);">Avatar 5</option>
+                </select>
+                <img style="width:150px;aspect-ratio:1/1;margin:15px;" class="perfil_img" src="/icon/avatar1.jpg" alt="perfil">
+                <input class="btnsub" type="submit" value="Registrarse">
+            </form>
+        </section>
+
+        <section class="login">
+            <h2>Iniciar sesión</h2>
+            <form action="login.php" method="POST">
+                <label for="nick">Nickname</label>
+                <input type="text" name="nick" id="nick" placeholder="juan y medio ..." required>
+                <label for="contrasenia">Contraseña</label>
+                <input type="password" name="contrasenia" id="contrasenia" placeholder="******?" required>
+                <input class="btnsub" type="submit" value="Iniciar sesión">
+            </form>
+        </section>
+
+        {% if error %}
+        <p id="error">{{ error }}</p>
+        {% endif %}
+
+        <p id="mensaje">¿No tienes cuenta? </p><button class="btnsub" id="btn-cambio">Registrarse</button>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Granarutas. Todos los derechos reservados.</p>
+        <p>Contacto: info@granarutas.com</p>
+    </footer>
+
+    <script type="module" src="/js/registrar_login.js"></script>
+    <script type="module" src="/js/listenerPerfil.js"></script>
+
+</body>

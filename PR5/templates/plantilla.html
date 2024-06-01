@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}
+
+
+    {% endblock %}
+</head>
+
+<body>
+
+    <header>
+        <a href="/home" class="logo"><img src="/icon/placeholder.jpg" alt="logo"></a>
+        <div class="titulo-nav">
+            <h1>Granarutas</h1>
+            <nav>
+                <ul>
+                    <li><a href="/home">Inicio</a></li>
+                    <span class="separador">|</span>
+                    <li><a href="#">Actividades</a></li>
+                    <span class="separador">|</span>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="decorador">
+
+        </div>
+    </header>
+
+    <div class="container">
+
+        {% block aside %}
+        <aside>
+            <!-- Zona lateral con enlaces de interés -->
+            {% if usuario != null %}
+            <a href="/modificarUsuario" class="usuario"><img src="{{usuario['avatar']}}" alt="logo"></a>
+            <h2>Bienvenido {{ usuario['nick']}} </h2>
+            <h2 style="color:white;font-size: 30px;">Posee rol : {{usuario['rol']}}</h2>
+            {% else %}
+            <a href="/registrar_iniciarsesion" class="usuario"><img src="/icon/avatar1.jpg" alt="perfil"></a>
+            <h2>Gestión de usuario</h2>
+            {% endif %}
+
+
+            <ul>
+                <!-- Si el usuario no es nulo -->
+                {% if usuario == null %}
+                <li><a href="/registrar_iniciarsesion">Iniciar sesión / Registrarse</a></li>
+                <li><a href="/listadoActs">Listado de actividades publicadas </a></li>
+                {% else %}
+                <li><a href="/logout.php">Cerrar sesión</a></li>
+                <li><a href="/modificarUsuario">Modificar mi info</a></li>
+                <li><a href="/listadoActs">Listado de actividades publicadas </a></li>
+                {% endif %}
+
+                {% if usuario['rol'] == 'SUPERUSUARIO' %}
+                <li><a href="/editarRoles">Modificar roles</a></li>
+                <li><a href="/modificarCrearActividad">Gestionar actividades</a></li>
+                <li><a href="/listadoActs">Lista de actividades y comentarios</a></li>
+                {% elseif usuario['rol'] == 'GESTOR' %}
+                <li><a href="/modificarCrearActividad">Gestionar actividades</a></li>
+                <li><a href="/listadoActs">Listado de actividades</a></li>
+                {% elseif usuario['rol'] == 'MODERADOR' %}
+                <li><a href="/listadoActs">Listado de comentarios</a></li>
+                {% endif %}
+
+            </ul>
+
+            <h2>Última hora</h2>
+
+            <div class="liston-ultima-hora">
+                <span><i class="fa-solid fa-triangle-exclamation fa-fade"></i></span>
+                <span><i class="fa-solid fa-triangle-exclamation fa-fade"></i></span>
+                <span><i class="fa-solid fa-triangle-exclamation fa-fade"></i></span>
+            </div>
+
+            {% for noticia in noticias %}
+
+            <div class="noticia">
+                <h3>{{noticia['titulo']}}</h3>
+                <p>{{noticia['descripcion']}}</p>
+                <img src="{{noticia['img']}}" alt="noticia['titulo']">
+            </div>
+
+            <div class="liston-ultima-hora">
+                <span><i class="fa-solid fa-triangle-exclamation fa-fade"></i></span>
+                <span><i class="fa-solid fa-triangle-exclamation fa-fade"></i></span>
+                <span><i class="fa-solid fa-triangle-exclamation fa-fade"></i></span>
+            </div>
+
+            {% endfor %}
+
+        </aside>
+        {% endblock %}
+
+        {% block shared %}
+
+
+        {% endblock %}
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Granarutas. Todos los derechos reservados.</p>
+        <p>Contacto: info@granarutas.com</p>
+    </footer>
+
+    {% block scripts %}
+
+    {% endblock %}
+
+</body>
+
+</html>

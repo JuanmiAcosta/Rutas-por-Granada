@@ -1,13 +1,26 @@
 import { TEXTO } from './constantes.js';
 import Swal from 'https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/+esm'
 
-const palabrasFeillas = ['puta', 'mierda', 'coño', 'polla', 'gilipollas', 'cabrón', 'cabron', 'idiota', 'imbecil', 'imbécil'];
+async function obtenerPalabrasFeillas() { //Promesa en js para obtener asincronamente las palabras feillas
+    let response = await fetch('../gestorJs.php', {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+            'funcion': 'getPalabras',
+        }),
+    });
 
+    let data = await response.json();
+    return data;
+}
+
+let palabrasFeillas = await obtenerPalabrasFeillas();
+palabrasFeillas = palabrasFeillas.map(palabra => palabra.palabra.toLowerCase()); // de json a array
+console.log(palabrasFeillas);
 
 TEXTO.addEventListener('input', function() {
-
-    //console.log(TEXTO.tagName.toLowerCase());
-    //console.log(TEXTO.value);
 
     var palabras = TEXTO.value.split(' ');
 

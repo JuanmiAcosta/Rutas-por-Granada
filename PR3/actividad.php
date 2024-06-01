@@ -14,8 +14,9 @@
     $bonus = getBonus($idact);
     $fotos = getFotos($idact);
     $noticias = getNoticias();
+   $mapa = getMapa($idact);
 
     echo $twig->render('actividad.html', ['actividad' => $actividad , 'act' => $idact, 
     'comentarios' => $comentarios, 'redes' => $redes, 'bonus' => $bonus, 'fotos' => $fotos,
-    'noticias' => $noticias]);
+    'noticias' => $noticias, 'mapa' => $mapa]);
 ?>

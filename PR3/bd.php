@@ -247,4 +247,66 @@
         return $fotos;
     }
 
+    function getPalabras() {
+
+        global $conexion;
+
+        if ($conexion->connect_error) {
+            $conexion->close();
+            $conexion = Database::getConexion();
+        }
+
+        $stmt = $conexion->prepare("SELECT * FROM PALABRAS_PROHIBIDAS");
+        $stmt->execute();
+
+        $resultado = $stmt->get_result();
+
+        $palabras = array();
+
+        if ($resultado->num_rows > 0) {
+            while($palabra = $resultado->fetch_assoc()) {
+                $palabras[] = array('palabra' => $palabra['palabra']);
+            }
+        }
+
+        $stmt->close();
+
+        return $palabras;
+    }
+
+    function getMapa($idact) {
+
+        global $conexion;
+
+        if ($conexion->connect_error) {
+            $conexion->close();
+            $conexion = Database::getConexion();
+        }
+
+        $stmt = $conexion->prepare("SELECT * FROM CLAVE_MAPAS WHERE id = ?");
+        $stmt->bind_param("i", $idact); // "i" indica que $idact es un número entero
+
+        $stmt->execute();
+
+        $resultado = $stmt->get_result();
+
+        if ($resultado->num_rows > 0) {
+
+            $mapa = $resultado->fetch_assoc();
+
+            // Valores a devolver
+            $ret_mapa = array('clave' => $mapa['clave']);
+
+        }else{
+            // Valores mapa_vacio
+            $clave = "<Clave de mapa>";
+
+            $ret_mapa = array('clave' => $clave);
+        }
+
+        $stmt->close();
+
+        return $ret_mapa;
+    }
+
 ?>

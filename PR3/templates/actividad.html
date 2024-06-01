@@ -70,9 +70,11 @@
 
     <section class="encabezado_actividad">
         <h2>{{ actividad['titulo'] }}</h2>
-        <ul>
+        <ul style="justify-content: center;">
 
-            <li><a href="{{ actividad['url_ubicacion'] }}" target="_blank">Ubicación : {{ actividad['ubicacion'] }}</a></li>
+            <li>
+                <a href="{{ actividad['url_ubicacion'] }}" target="_blank">Ubicación : {{ actividad['ubicacion'] }}</a></li>
+                <div id="iframe"><iframe src="{{ mapa['clave']}}" width="400px" height="250px" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
             </li>
             <li>
                 <p> Dificultad : {{actividad['dificultad']}} </p>
@@ -130,8 +132,8 @@
                 {% endfor %}
             </div>
         </div>
-        <button class="carrousel-btn carrousel-btn-prev"><i class="fa-solid fa-chevron-left"></i></button>
-        <button class="carrousel-btn carrousel-btn-next"><i class="fa-solid fa-chevron-right"></i></button>
+        <button class="carrousel-btn carrousel-btn-prev"><i class="fa-solid fa-chevron-left" style="color:black"></i></button>
+        <button class="carrousel-btn carrousel-btn-next"><i class="fa-solid fa-chevron-right" style="color:black"></i></button>
     </section>
 
     <section class="comentarios">

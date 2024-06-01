@@ -1,0 +1,215 @@
+/*Esta página css va dirigida únicamente al diseño responsive de la página en general*/
+
+/*Portada-Layout*/
+
+@media (max-width: 1200px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bonus {
+        flex-direction: row;
+    }
+}
+
+@media (width < 830px) {
+    .logo {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .titulo-nav {
+        margin-left: 10px;
+    }
+
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .titulo-nav nav ul li {
+        font-size: 30px;
+    }
+
+    aside {
+        width: 40%;
+    }
+}
+
+
+@media (width < 840px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        margin: 10px;
+        float: none;
+        width: auto;
+    }
+
+    .wrapper {
+        width: 94%;
+        margin: 10px;
+    }
+
+    .wrapper-actividad {
+        width: 94%;
+        margin: 10px;
+    }
+
+    .img2{
+        display:none;
+    }
+
+    .bonus {
+        flex-direction: row;
+    }
+
+    .aside_actividad {
+        display: none;
+    }
+}
+
+@media (width < 615px) {
+    header {
+        align-items: center;
+    }
+
+    .titulo-nav h1 {
+        font-size: 60px;
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    aside {
+        width: 85%;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+    }
+
+    .titulo-nav h1 {
+        align-items: center;
+        text-align: center;
+    }
+
+    .separador {
+        display: none;
+    }
+
+    footer {
+        font-size: 30px;
+        padding: 10px;
+    }
+}
+
+@media (width < 500px) {
+
+    .container {
+        width: 96%;
+    }
+
+    .titulo-nav h1 {
+        margin-right: 15px;
+    }
+
+    body {
+        padding: 5px;
+    }
+
+}
+
+@media (width < 360px) {
+    .container {
+        width: 90%;
+    }
+
+    .wrapper {
+        width: 96%;
+        margin: 10px;
+    }
+}
+
+/* Actividad */
+
+@media (width < 1415px) {
+    .bonus {
+        flex-direction: column;
+    }
+}
+
+
+@media (width < 1120px) {
+
+    .wrapper-actividad {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (width < 640px) {
+
+    .img2 {
+        display: none;
+    }
+
+    .img1 {
+        grid-column: 1 / 4;
+    }
+
+}
+
+@media (width < 540px) {
+
+    .botones {
+        font-size: 40px;
+    }
+
+    .botones a {
+        margin-left: 23px;
+        margin-right: 23px;
+    }
+
+    .bonus {
+        justify-content: space-around;
+    }
+
+    .bonus h2 {
+        display: none;
+    }
+
+    .carrousel h2{
+        font-size: 20px;
+    }
+
+    .bonus span img {
+        width: 70%;
+        height: 50px;
+    }
+
+}
+
+@media (width < 380px) {
+
+    .container .wrapper-actividad .bonus h2 {
+        display: none;
+    }
+
+    .botones {
+        font-size: 30px;
+    }
+}

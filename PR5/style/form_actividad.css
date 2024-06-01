@@ -1,0 +1,139 @@
+.wrapper_form_actividad{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0d8;
+    padding: 1%;
+    width: 100%;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+    margin: 10px;
+}
+
+.datosActividad{
+    display: flex;
+    width:90%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+form {
+    display: flex;
+    width:60%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+input {
+    font-family: "Micro 5", sans-serif;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 30px;
+    width: 100%;
+}
+
+option, select{
+    font-family: "Micro 5", sans-serif;
+    font-size:30px;
+}
+
+
+label {
+    font-size: 35px;
+    margin: 10px;
+}
+
+button {
+    font-family: "Micro 5", sans-serif;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;  
+    background-color: #7F653A;
+    color: white;
+    width: 25%;
+}
+
+select {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 30px;
+    width: 100%;
+}
+
+textarea{
+    font-family: "Micro 5", sans-serif;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 30px;
+    width: 100%;
+}
+
+.select_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+input[type="file" i] {
+    font-family: "Micro 5", sans-serif;
+}
+
+#foto_1, #foto_2 {
+    font-family: "Micro 5", sans-serif;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 30px;
+    width: 100%;
+}
+
+.btnsub {
+    background-color: #7F653A;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    transition: 0.5s;
+}
+
+.btnsub:hover {
+    background-color: #584E12;
+    scale: 1.1;
+}
+
+#error {
+    color: rgb(124, 26, 26);
+    font-size: 30px;
+    border: 2px solid rgb(124, 26, 26);
+    padding: 10px;
+    text-align: center;
+}
+
+#publicada {
+    transform: scale(2);
+    margin: 10px;
+}

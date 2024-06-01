@@ -1,0 +1,200 @@
+{% extends "plantilla.html" %}
+
+{% block head %}
+
+<title> Granarutas </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style/portada_layout.css">
+<link rel="stylesheet" href="/style/responsive.css">
+<link rel="stylesheet" href="/style/form_actividad.css">
+<script src="https://kit.fontawesome.com/b9c8f9a610.js" crossorigin="anonymous"></script>
+<link rel="icon" href="/icon/placeholder.jpg" type="image/x-icon">
+
+{% endblock %}
+
+{% block shared %}
+
+<main class="wrapper_form_actividad">
+
+    {% if usuario['rol'] == 'SUPERUSUARIO' or usuario['rol'] == 'GESTOR' %}
+
+    {% if actividad == null %} <!-- Crear actividad -->
+
+    <section class="datosActividad">
+
+        <h2 style="font-size: 60px; ">Ingrese la información de la actividad</h2>
+
+        <form action="/CUActividad.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="rol" value="{{usuario['rol']}}">
+            <input type="hidden" name="metodo" value="crear">
+            <label for="tutulo">Título de la actividad:</label>
+            <input type="text" name="titulo" id="titulo" placeholder=" Ruta oeste de Calahorra ...">
+            <label for="ubicacion">Ubicación:</label>
+            <input type="text" name="ubicacion" id="ubicacion" placeholder="Sierra a las afueras de Calahorra ...">
+            <label for="ubicacion_url">URL de Google maps:</label>
+            <input type="text" name="ubicacion_url" id="ubicacion_url" placeholder="https::// ...">
+            <div class="select_div">
+                <label for="dificultad">Dificultad:</label>
+
+                <select name="dificultad" id="dificultad">
+                    <option value="Fácil">Fácil</option>
+                    <option value="Media">Media</option>
+                    <option value="Difícil">Difícil</option>
+                </select>
+                <label for="epoca">Época:</label>
+                <select name="epoca" id="epoca">
+                    <option value="Verano">Verano</option>
+                    <option value="Invierno">Invierno</option>
+                    <option value="Otoño">Otoño</option>
+                    <option value="Primavera">Primavera</option>
+                </select>
+            </div>
+            <label for="desnivel">Desnivel:</label>
+            <input type="number" name="desnivel" id="desnivel" placeholder="500">
+            <label for="distancia">Distancia:</label>
+            <input type="text" name="distancia" id="distancia" placeholder="10.5">
+            <label for="duracion">Duración:</label>
+            <input type="time" name="duracion" id="duracion" placeholder="02:30">
+            <label for="descripcion">Descripción:</label>
+            <textarea name="descripcion" id="descripcion"
+                placeholder="Ruta de senderismo por la sierra de Calahorra ..." rows="3"></textarea>
+            <label for="foto_1">Foto 1 (Portada):</label>
+            <input type="file" name="foto_1" id="foto_1">
+            <label for="foto_2">Foto 2 (Auxiliar):</label>
+            <input type="file" name="foto_2" id="foto_2">
+            <label for="facebook">Facebook:</label>
+            <input type="text" name="facebook" id="facebook" placeholder="https://www.facebook.com/...">
+            <label for="twitter">Twitter:</label>
+            <input type="text" name="twitter" id="twitter" placeholder="https://www.twitter.com/...">
+            <div class="select_div">
+                <label for="bonus1">Bonus 1:</label>
+                <select name="bonus1" id="bonus1">
+                    <option value="../icon/agua.png">Ruta húmeda</option>
+                    <option value="../icon/perro.png">Mascotas bienvenidas</option>
+                    <option value="../icon/kart.png">Aparcamiento disponible cerca</option>
+                    <option value="../icon/nieve.png">Nieve en temporada</option>
+                </select>
+
+                <label for="bonus2">Bonus 2:</label>
+                <select name="bonus2" id="bonus2">
+                    <option value="../icon/agua.png">Ruta húmeda</option>
+                    <option value="../icon/perro.png">Mascotas bienvenidas</option>
+                    <option value="../icon/kart.png">Aparcamiento disponible cerca</option>
+                    <option value="../icon/nieve.png">Nieve en temporada</option>
+                </select>
+            </div>
+
+            <label for="url_iframe">URL del iframe de Google maps:</label>
+            <input type="text" name="url_iframe" id="url_iframe" placeholder="https://www.google.com/maps/embed?...">
+
+            <!-- Para publicar del tirón -->
+
+            <label for="publicada">Publicar:</label>
+            <input type="checkbox" name="publicada" id="publicada" value="1">
+
+            <input class="btnsub" type="submit" value="Crear">
+
+        </form>
+
+        {% if error %}
+        <p id="error">{{ error }}</p>
+        {% endif %}
+    </section>
+
+    {% else %} <!-- Modificar actividad -->
+
+    <section class="datosActividad">
+
+        <h2 style="font-size: 60px; ">Inserte los datos a actualizar de la ruta : {{ actividad['titulo'] }}{% if actividad['publicada'] == 1 %} <span style="color:green;">( Publicada )</span>
+            {% else %} <span style="color:red;">( No publicada )</span> {% endif %}</h2>
+
+        <form action="/CUActividad.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="rol" value="{{usuario['rol']}}">
+            <input type="hidden" name="id" value="{{actividad['id']}}">
+            <input type="hidden" name="metodo" value="modificar">
+            <label for="tutulo">Título de la actividad:</label>
+            <input type="text" name="titulo" id="titulo" placeholder=" {{ actividad['titulo'] }} ...">
+            <label for="ubicacion">Ubicación:</label>
+            <input type="text" name="ubicacion" id="ubicacion" placeholder="{{actividad['ubicacion'] }} ...">
+            <label for="ubicacion_url">URL de Google maps:</label>
+            <input type="text" name="ubicacion_url" id="ubicacion_url" placeholder="{{actividad['url_ubicacion']}} ...">
+            <div class="select_div">
+                <label for="dificultad">Dificultad:</label>
+
+                <select name="dificultad" id="dificultad">
+                    {% if actividad['dificultad'] == 'Fácil' %}
+                    <option value="Fácil" selected>Fácil</option>
+                    {% else %}
+                    <option value="Fácil">Fácil</option>
+                    {% endif %}
+                    {% if actividad['dificultad'] == 'Media' %}
+                    <option value="Media" selected>Media</option>
+                    {% else %}
+                    <option value="Media">Media</option>
+                    {% endif %}
+                    {% if actividad['dificultad'] == 'Difícil' %}
+                    <option value="Difícil" selected>Difícil</option>
+                    {% else %}
+                    <option value="Difícil">Difícil</option>
+                    {% endif %}
+                </select>
+                <label for="epoca">Época:</label>
+                <select name="epoca" id="epoca">
+                    {% if actividad['epoca'] == 'Verano' %}
+                    <option value="Verano" selected>Verano</option>
+                    {% else %}
+                    <option value="Verano">Verano</option>
+                    {% endif %}
+                    {% if actividad['epoca'] == 'Invierno' %}
+                    <option value="Invierno" selected>Invierno</option>
+                    {% else %}
+                    <option value="Invierno">Invierno</option>
+                    {% endif %}
+                    {% if actividad['epoca'] == 'Otoño' %}
+                    <option value="Otoño" selected>Otoño</option>
+                    {% else %}
+                    <option value="Otoño">Otoño</option>
+                    {% endif %}
+                    {% if actividad['epoca'] == 'Primavera' %}
+                    <option value="Primavera" selected>Primavera</option>
+                    {% else %}
+                    <option value="Primavera">Primavera</option>
+                    {% endif %}
+                </select>
+            </div>
+            <label for="desnivel">Desnivel:</label>
+            <input type="number" name="desnivel" id="desnivel" placeholder="{{actividad['desnivel']}} ...">
+            <label for="distancia">Distancia:</label>
+            <input type="text" name="distancia" id="distancia" placeholder="{{ actividad['distancia']}} ...">
+            <label for="duracion">Duración:</label>
+            <input type="time" name="duracion" id="duracion" placeholder="{{ actividad['duracion']}} ...">
+            <label for="descripcion">Descripción:</label>
+            <textarea name="descripcion" id="descripcion" placeholder="{{actividad['descripcion']}} ..."
+                rows="3"></textarea>
+
+            {% if actividad['publicada'] == 1 %}
+            <label for="publicada">Publicar:</label>
+            <input type="checkbox" name="publicada" id="publicada" checked>
+            {% else %}
+            <label for="publicada">Publicar:</label>
+            <input type="checkbox" name="publicada" id="publicada">
+            {% endif %}
+
+            <input class="btnsub" type="submit" value="Actualizar">
+
+        </form>
+
+        {% if error %}
+        <p id="error">{{ error }}</p>
+        {% endif %}
+    </section>
+
+    {% endif %}
+
+    {% endif %}
+
+</main>
+
+{% endblock %}

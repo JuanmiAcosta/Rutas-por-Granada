@@ -1,0 +1,82 @@
+{% extends "plantilla.html" %}
+
+{% block head %}
+
+    <title> Granarutas </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/portada_layout.css">
+    <link rel="stylesheet" href="/style/responsive.css">
+    <link rel="stylesheet" href="/style/listaRoles.css">
+    <script src="https://kit.fontawesome.com/b9c8f9a610.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/icon/placeholder.jpg" type="image/x-icon">
+
+{% endblock %}
+
+{% block shared %}
+
+<main class="wrapperRoles">
+
+    <section class="listaRoles">
+
+        {% for asignacion in asignaciones %}
+        {% if asignacion['nick'] != 'juanmi' %}
+        <h2>Rol de {{asignacion['nick']}}</h2>
+        <form action="actualizarAsignacion.php" method="POST">
+            <input type="hidden" name="nick" value="{{asignacion['nick']}}">
+            <input type="hidden" name="usuario_rol" value="{{usuario['rol']}}">
+            <input type="hidden" name="metodo" value="actualizar">
+            <label for="rol">Actualiza su rol</label>
+            <select name="rol" id="rol">
+                {% if asignacion['rol'] == 'SUPERUSUARIO' %}
+                <option value="SUPERUSUARIO" selected>SUPERUSUARIO</option>
+                {% else %}
+                <option value="SUPERUSUARIO" >SUPERUSUARIO</option>
+                {% endif %}
+                {% if asignacion['rol'] == 'GESTOR' %}
+                <option value="GESTOR" selected>GESTOR</option>
+                {% else %}
+                <option value="GESTOR" >GESTOR</option>
+                {% endif %}
+                {% if asignacion['rol'] == 'MODERADOR' %}
+                <option value="MODERADOR" selected>MODERADOR</option>
+                {% else %}
+                <option value="MODERADOR" >MODERADOR</option>
+                {% endif %}  
+                <option value="REGISTRADO" >REGISTRADO</option>
+            </select>
+            <input class="btnsub" type="submit" value="Actualizar">
+        </form>
+        {% endif %}
+        {% endfor %}
+
+        <h2>Crea una asignación nueva</h2>
+        <form action="actualizarAsignacion.php" method="POST">
+            <input type="hidden" name="usuario_rol" value="{{usuario['rol']}}">
+            <input type="hidden" name="metodo" value="insertar">
+            <label for="nick">Nickname</label>
+            <input type="text" name="nick" id="nick" placeholder="juan y medio ..." required>
+            <label for="contrasenia">Contraseña</label>
+            <input type="password" name="contrasenia" id="contrasenia" placeholder="*******?" required>
+            <label for="contrasenia2">Repetir contraseña</label>
+            <input type="password" name="contrasenia2" id="contrasenia2" placeholder="*******?" required>
+            <label for="rol">Selecciona su rol</label>
+            <select name="rol" id="rol">
+                <option value="SUPERUSUARIO" >SUPERUSUARIO</option>
+                <option value="GESTOR" >GESTOR</option>
+                <option value="MODERADOR" >MODERADOR</option>
+            </select>
+            <input class="btnsub" type="submit" value="Actualizar">
+        </form>
+
+        {% if error %}
+        <p id="error">{{ error }}</p>
+        {% endif %}
+
+    </section>
+
+
+</main>
+
+{% endblock %}

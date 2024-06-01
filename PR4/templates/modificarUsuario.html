@@ -1,0 +1,85 @@
+{% extends "plantilla.html" %}
+
+{% block head %}
+
+<title> Granarutas </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style/portada_layout.css">
+<link rel="stylesheet" href="/style/responsive.css">
+<link rel="stylesheet" href="/style/modificarUsuario.css">
+<script src="https://kit.fontawesome.com/b9c8f9a610.js" crossorigin="anonymous"></script>
+<link rel="icon" href="/icon/placeholder.jpg" type="image/x-icon">
+
+{% endblock %}
+
+{% block shared %}
+
+<main class="wrapperUsuario">
+
+    <section class="datosUsuario">
+        <h2 style="color:white;font-size: 60px; ">Ingrese la información que desee actualizar</h2>
+        <h2> Información de {{usuario['nick']}}</h2>
+        <form action="updateUsuario.php" method="POST">
+            <input type="hidden" name="nick_actual" value="{{usuario['nick']}}">
+            <input type="hidden" name="avatar_actual" value="{{usuario['avatar']}}">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Actualmente -> {{usuario['nombre']}}">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Actualmente -> {{usuario['email']}}">
+            <label for="contrasenia">Contraseña</label>
+            <input type="password" name="contrasenia" id="contrasenia" placeholder="*******?">
+            <label for="contrasenia">Repite contraseña</label>
+            <input type="password" name="contrasenia2" id="contrasenia2" placeholder="*******?">
+            <!--Escoge tu avatar -->
+            <label for="avatar">Escoge tu avatar</label>
+            <select name="avatar" id="avatar">
+                {% if usuario['avatar'] == '/icon/avatar1.jpg' %}
+                <option value="/icon/avatar1.jpg" style="background-image:url(/icon/avatar1.jpg);" selected>Avatar 1
+                </option>
+                {% else %}
+                <option value="/icon/avatar1.jpg" style="background-image:url(/icon/avatar1.jpg);">Avatar 1</option>
+                {% endif %}
+                {% if usuario['avatar'] == '/icon/avatar2.jpg' %}
+                <option value="/icon/avatar2.jpg" style="background-image:url(/icon/avatar2.jpg);" selected>Avatar 2
+                </option>
+                {% else %}
+                <option value="/icon/avatar2.jpg" style="background-image:url(/icon/avatar2.jpg);">Avatar 2</option>
+                {% endif %}
+                {% if usuario['avatar'] == '/icon/avatar3.jpg' %}
+                <option value="/icon/avatar3.jpg" style="background-image:url(/icon/avatar3.jpg);" selected>Avatar 3
+                </option>
+                {% else %}
+                <option value="/icon/avatar3.jpg" style="background-image:url(/icon/avatar3.jpg);">Avatar 3</option>
+                {% endif %}
+                {% if usuario['avatar'] == '/icon/avatar4.jpg' %}
+                <option value="/icon/avatar4.jpg" style="background-image:url(/icon/avatar4.jpg);" selected>Avatar 4
+                </option>
+                {% else %}
+                <option value="/icon/avatar4.jpg" style="background-image:url(/icon/avatar4.jpg);">Avatar 4</option>
+                {% endif %}
+                {% if usuario['avatar'] == '/icon/avatar5.jpg' %}
+                <option value="/icon/avatar5.jpg" style="background-image:url(/icon/avatar5.jpg);" selected>Avatar 5
+                </option>
+                {% else %}
+                <option value="/icon/avatar5.jpg" style="background-image:url(/icon/avatar5.jpg);">Avatar 5</option>
+                {% endif %}
+            </select>
+            <img style="width:150px;aspect-ratio:1/1;margin:15px;" class="perfil_img" src="/icon/avatar5.jpg" alt="perfil">
+            <input class="btnsub" type="submit" value="Actualizar">
+
+        </form>
+
+        {% if error %}
+        <p id="error">{{ error }}</p>
+        {% endif %}
+    </section>
+
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="/js/listenerPerfil.js"></script>
+{% endblock %}

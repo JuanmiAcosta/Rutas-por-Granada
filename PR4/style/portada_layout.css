@@ -1,0 +1,301 @@
+/* Paleta de colores 
+
+#ffffff 
+#fffaeb 
+#f0f0d8
+#cfcfcf
+#967c52
+
+*/
+
+/* Esta página css va dirigida a los elementos principales y compratidos por otras páginas */
+
+/* HEADER */
+
+body {
+    font-family: "Micro 5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #fffaeb;
+    margin: 0;
+    padding: 15px;
+    height: fit-content;
+}
+
+header {
+    background-image: linear-gradient(110deg,
+            hsl(68deg 54% 52%) 0%,
+            hsl(70deg 51% 47%) 10%,
+            hsl(72deg 51% 43%) 21%,
+            hsl(74deg 52% 38%) 32%,
+            hsl(76deg 53% 34%) 42%,
+            hsl(78deg 55% 30%) 53%,
+            hsl(80deg 53% 28%) 63%,
+            hsl(83deg 52% 27%) 73%,
+            hsl(85deg 50% 25%) 83%,
+            hsl(88deg 48% 24%) 92%,
+            hsl(91deg 47% 22%) 100%);
+    padding:15px;
+    text-align: center;
+    height:auto;
+    display: flex;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin: 10px;
+    align-items: center;
+}
+
+.separador {
+    margin-right: 15px;
+}
+
+.logo {
+    float: left;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 8px 0 0 0;
+    width: 150px;
+    height: 150px;
+}
+
+.logo img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 100px;
+    border: 5px solid #706149;
+    transition: transform 0.5s ease-out;
+}
+
+.logo img:hover {
+    border: 5px solid #ccba9c;
+    transform: scale(1.1);
+}
+
+.titulo-nav h1 {
+    font-size: 85px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: start;
+    font-weight: bold;
+}
+
+.titulo-nav nav {
+    width: fit-content;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-size: 40px;
+}
+
+.titulo-nav nav ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.titulo-nav nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin-right: 10px;
+}
+
+.titulo-nav nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.titulo-nav nav ul li a:hover {
+    color: #584E12;
+}
+
+/* usuario foto */
+.usuario {
+    float: left;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 8px 0 0 0;
+    width: 150px;
+    height: 150px;
+}
+
+.usuario img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 100px;
+    border: 5px solid #706149;
+    transition: transform 0.5s ease-out;
+}
+
+.usuario img:hover {
+    border: 5px solid #ccba9c;
+    transform: scale(1.1);
+}
+
+/* ASIDE NOTICIAS */
+
+aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.liston-ultima-hora {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.liston-ultima-hora {
+    font-size: 40px;
+    color: #e79747;
+}
+
+.liston-ultima-hora span{
+    margin: 10px;
+}
+
+.noticia{
+    width:100%;
+}
+
+.noticia h3 {
+    font-size: 35px;
+    color: white;
+}
+
+.noticia p {
+    font-size: 35px;
+}
+
+.noticia img {
+    width:96%;
+    /*height: 100%;*/
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border: 5px solid black;
+    margin-bottom: 50px;
+}
+
+
+/* ASIDE Y MAIN */
+
+.container,
+.container-jm {
+    display: flex;
+    height: 100%;
+    width:100%;
+    justify-items: center;
+}
+
+aside {
+    background-color: #879435;
+    padding: 20px;
+    width: 20%;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+aside h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside ul li {
+    padding: 10px 0;
+    border-top: 3px solid #ffffff;
+}
+
+aside ul li a {
+    color: black;
+    font-size: 30px;
+}
+
+aside ul li a:hover {
+    color: #584E12;
+}
+
+.wrapper{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #f0f0d8;
+    padding: 1%;
+    width: 100%;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.activity {
+    background-color: #c9af87;
+    padding: 20px;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.activity a {
+    display: inline-block;
+    /* Asegura que el enlace ocupe solo el espacio necesario */
+    text-decoration: none;
+    /* Quita el subrayado del enlace */
+}
+
+.activity img {
+    aspect-ratio: 1/1;
+    width: 100%;
+    /* La altura se ajustará automáticamente para mantener la proporción */
+    object-fit: cover;
+    /* Escalar la imagen para cubrir el contenido del contenedor */
+    border: 2px solid black;
+    transition: transform 0.5s ease-out;
+}
+
+.activity img:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.nombre_actividad {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo semitransparente para mejorar la legibilidad */
+    color: white;
+    box-sizing: border-box;
+    /* Incluye el padding en el ancho del elemento */
+}
+
+/* FOOTER */
+
+footer {
+    clear: both;
+    background-color: #7F653A;
+    font-size: 40px;
+    padding: 10px 0;
+    text-align: center;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin: 10px;
+}
