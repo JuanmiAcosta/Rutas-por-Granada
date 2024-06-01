@@ -25,6 +25,6 @@ Además he aprendido más sobre el uso de plantillas, en este caso trabajé con 
 * CSS
 * Javascript
 * PHP
-* AJAX
+* Llamadas asíncronas 
 
 Link de la página estática : https://elegant-buttercream-61f8de.netlify.app/
